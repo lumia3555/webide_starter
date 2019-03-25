@@ -1,0 +1,45 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Egg",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "runtimeExecutable": "tnpm",
+      "windows": { "runtimeExecutable": "npm.cmd" },
+      "runtimeArgs": [ "run", "debug" ],
+      "console": "integratedTerminal",
+      "protocol": "auto",
+      "restart": true,
+      "port": 9229,
+      "autoAttachChildProcesses": true
+    },
+    {
+      "name": "Test Egg",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "runtimeExecutable": "tnpm",
+      "windows": { "runtimeExecutable": "npm.cmd" },
+      "runtimeArgs": [ "run", "test-local", "--", "--inspect-brk" ],
+      "console": "integratedTerminal",
+      "protocol": "auto",
+      "port": 9229,
+      "autoAttachChildProcesses": true
+    },
+    {
+      "name": "Test Current",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "runtimeExecutable": "tnpm",
+      "windows": { "runtimeExecutable": "npm.cmd" },
+      "runtimeArgs": [ "run", "test-local", "--", "${file}", "--inspect-brk" ],
+      "console": "integratedTerminal",
+      "protocol": "auto",
+      "port": 9229,
+      "autoAttachChildProcesses": true
+    },
+  ]
+}

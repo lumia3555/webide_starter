@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head>
+  {{ helper.getBigfishHead() }}
+</head>
+<body>
+  <script>
+    window.routerBase = '/';
+    window.resourceBaseUrl = '{{ helper.assets.resourceBase }}';
+  </script>
+  {{ helper.assets.getContext(__context__) | safe }}
+  {{ helper.getBigfishBody() }}
+</body>
+</html>
